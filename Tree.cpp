@@ -1,7 +1,7 @@
 #include "Tree.h"
 #include <iostream>
 
-//высота
+//high
 unsigned char height(node* p)
 {
     if (p)
@@ -14,13 +14,13 @@ unsigned char height(node* p)
     }
 }
 
-//вычисляет балансирующий фаактор
+//balance factor
 int bfactor(node* p)
 {
     return height(p->right) - height(p->left);
 }
 
-//восстанавливает корректное значение поля heigh
+//set correct value of heigh
 void fixheight(node* p)
 {
     unsigned char hl = height(p->left);
@@ -35,7 +35,7 @@ void fixheight(node* p)
     }
 }
 
-//поворот вправо
+//rotation right
 node* rotateright(node* p)
 {
     node* q = p->left;
@@ -46,7 +46,7 @@ node* rotateright(node* p)
     return q;
 }
 
-//поворот влево
+//rotation left
 node* rotateleft(node* p)
 {
     node* q = p->right;
@@ -57,7 +57,7 @@ node* rotateleft(node* p)
     return q;
 }
 
-//балансировка
+//balancing
 node* balance(node* p)
 {
     fixheight(p);
